@@ -616,15 +616,8 @@ export default function QaiyrymApp() {
   }
 
   return (
-    <div className={`min-h-screen bg-background text-[var(--theme-text)] font-sans selection:bg-primary/30 theme-${theme} relative`}>
-      {/* Global Video Background */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src="/videos/main-bg.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
-      </div>
-      <div className="max-w-md mx-auto min-h-screen flex flex-col relative z-10">
+    <div className={`min-h-screen bg-background text-[var(--theme-text)] font-sans selection:bg-primary/30 theme-${theme}`}>
+      <div className="max-w-md mx-auto min-h-screen flex flex-col relative">
         {/* Header */}
         <header className="p-6 flex items-center justify-between glass-panel sticky top-0 z-50 rounded-b-[32px] border-b border-primary/10">
           <div className="flex items-center gap-4">
@@ -677,6 +670,13 @@ export default function QaiyrymApp() {
 
                 {activeTab === 'settings' && (
                   <motion.div key="settings" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="space-y-8 relative">
+                    {/* Profile Video Background */}
+                    <div className="fixed inset-0 -z-10 overflow-hidden">
+                      <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-20">
+                        <source src="/videos/main-bg.mp4" type="video/mp4" />
+                      </video>
+                      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
+                    </div>
                     <h2 className="text-2xl font-black font-display">{t.settings}</h2>
                     <div className="glass-card p-6 space-y-4">
                       <div className="flex items-center gap-3 mb-2">
