@@ -669,26 +669,28 @@ export default function QaiyrymApp() {
                 )}
 
                 {activeTab === 'settings' && (
-                  <motion.div key="settings" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="space-y-8 relative">
+                  <>
                     {/* Profile Video Background */}
-                    <div className="fixed inset-0 -z-10 overflow-hidden">
-                      <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-20">
+                    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+                      <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-25">
                         <source src="/videos/main-bg.mp4" type="video/mp4" />
                       </video>
-                      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
+                      <div className="absolute inset-0 bg-background/50 backdrop-blur-[1px]" />
                     </div>
-                    <h2 className="text-2xl font-black font-display">{t.settings}</h2>
-                    <div className="glass-card p-6 space-y-4">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="p-2 bg-primary/10 rounded-2xl text-primary"><Settings size={20} /></div>
-                        <h3 className="text-lg font-bold">{t.language}</h3>
+                    <motion.div key="settings" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="space-y-8 relative z-10">
+                      <h2 className="text-2xl font-black font-display">{t.settings}</h2>
+                      <div className="glass-card p-6 space-y-4">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="p-2 bg-primary/10 rounded-2xl text-primary"><Settings size={20} /></div>
+                          <h3 className="text-lg font-bold">{t.language}</h3>
+                        </div>
+                        <div className="flex gap-3">
+                          <button onClick={() => handleLanguageChange('ru')} className={`flex-1 py-4 rounded-3xl font-bold border transition-all ${profile?.lang === 'ru' ? 'btn-primary border-primary' : 'bg-muted/5 border-border text-[var(--theme-text-muted)]'}`}>Русский</button>
+                          <button onClick={() => handleLanguageChange('kk')} className={`flex-1 py-4 rounded-3xl font-bold border transition-all ${profile?.lang === 'kk' ? 'btn-primary border-primary' : 'bg-muted/5 border-border text-[var(--theme-text-muted)]'}`}>Қазақша</button>
+                        </div>
                       </div>
-                      <div className="flex gap-3">
-                        <button onClick={() => handleLanguageChange('ru')} className={`flex-1 py-4 rounded-3xl font-bold border transition-all ${profile?.lang === 'ru' ? 'btn-primary border-primary' : 'bg-muted/5 border-border text-[var(--theme-text-muted)]'}`}>Русский</button>
-                        <button onClick={() => handleLanguageChange('kk')} className={`flex-1 py-4 rounded-3xl font-bold border transition-all ${profile?.lang === 'kk' ? 'btn-primary border-primary' : 'bg-muted/5 border-border text-[var(--theme-text-muted)]'}`}>Қазақша</button>
-                      </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </>
                 )}
 
                 {activeTab === 'map' && (
