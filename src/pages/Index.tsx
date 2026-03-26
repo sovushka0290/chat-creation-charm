@@ -677,13 +677,6 @@ export default function QaiyrymApp() {
 
                 {activeTab === 'settings' && (
                   <motion.div key="settings" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="space-y-8 relative">
-                    {/* Video Background */}
-                    <div className="fixed inset-0 -z-10 overflow-hidden">
-                      <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-20">
-                        <source src="/videos/profile-bg.mp4" type="video/mp4" />
-                      </video>
-                      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
-                    </div>
                     <h2 className="text-2xl font-black font-display">{t.settings}</h2>
                     <div className="glass-card p-6 space-y-4">
                       <div className="flex items-center gap-3 mb-2">
