@@ -616,15 +616,8 @@ export default function QaiyrymApp() {
   }
 
   return (
-    <div className={`min-h-screen bg-background text-[var(--theme-text)] font-sans selection:bg-primary/30 theme-${theme} relative`}>
-      {/* Global Video Background */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-          <source src="/videos/main-bg.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
-      </div>
-      <div className="max-w-md mx-auto min-h-screen flex flex-col relative z-10">
+    <div className={`min-h-screen bg-background text-[var(--theme-text)] font-sans selection:bg-primary/30 theme-${theme}`}>
+      <div className="max-w-md mx-auto min-h-screen flex flex-col relative">
         {/* Header */}
         <header className="p-6 flex items-center justify-between glass-panel sticky top-0 z-50 rounded-b-[32px] border-b border-primary/10">
           <div className="flex items-center gap-4">
