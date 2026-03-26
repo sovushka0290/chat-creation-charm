@@ -624,7 +624,7 @@ export default function QaiyrymApp() {
         </video>
         <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
       </div>
-      <div className="max-w-md mx-auto min-h-screen flex flex-col relative">
+      <div className="max-w-md mx-auto min-h-screen flex flex-col relative z-10">
         {/* Header */}
         <header className="p-6 flex items-center justify-between glass-panel sticky top-0 z-50 rounded-b-[32px] border-b border-primary/10">
           <div className="flex items-center gap-4">
